@@ -17,7 +17,9 @@ When hooking a method, budhook will generate the two methods based on the inform
 * 2.Build `appplugin` and then put `appplugin-debug.apk` into sdcard
 * 3.Run `app`
 ## Support
-BudHook added a layer written by Java to YAHFA,so BudHook supports what YAHFA support.Android 5.0 - 8.1.
+Budhook adds a layer written in java for YAHFA,so BudHook supports what YAHFA support.
+Android `5.0 - 8.1`. 
+ABI `arm64-v8a`,`armeabi-v7a`,`x86`.
 ## API
 `It is recommended to run and read this demo first.`
 There are several important classes : 
