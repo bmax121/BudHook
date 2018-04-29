@@ -25,8 +25,6 @@ There are several important classes :
 * `BudCallBack.MethodHookParams`: Wraps information about the method call and allows to influence it.Basic types will be boxed or unboxed automatically.<br>You can get(read) or modify(write) parameters as table below in the function `beforeCall` and `afterCall`.<br>
 [nedd update]
 ## Note
-* Make sure correct ClassLoader.
 * TurboDex is useful to avoid some problem that caused by optimization.
 * Notice the capacity initialized of YAHFA.
 * Get a Context when BudHook initialized only to get a ClassLoader and a place to write and read Dex file,change the source as your like.
-* 
