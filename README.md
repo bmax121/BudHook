@@ -9,7 +9,7 @@ BudHook based on several projects below:
 
 ## What did it solved?
 When using YAHFA, every hook of a method, you have to write a method to replace it, if you want to call the original method, you must write another method to save the original method information. This is very troublesome to use.
-BudHook generates these methods dynamically. It is very `simple` and to use.
+BudHook generates these methods dynamically. It is very `simple` to use.
 ## How it works
 When hooking a method, budhook will generate the two methods based on the information of the hooked method automatically, then generate the dex file, and finally load the dex file to complete the hook.
 ## How to run this demo
@@ -22,6 +22,11 @@ There are several important classes :
 * `BudHelpers`: High-level API for convenient hook.Like `XposedHelper`.
 * `BudBridge`: Export two core functions for hook: `hookMethod`,`hookManyMethod`.
 * `BudCallBack`: Provide `beforeCall` and `afterCall` for subclass overrides.Like `XC_MethodHook`
-* `BudCallBack.MethodHookParams`: Wraps information about the method call and allows to influence it.Basic types will be boxed or unboxed automatically.You can get(read) or modify(write) parameters as table below in the function `beforeCall` and `afterCall`.<br>
-
+* `BudCallBack.MethodHookParams`: Wraps information about the method call and allows to influence it.Basic types will be boxed or unboxed automatically.<br>You can get(read) or modify(write) parameters as table below in the function `beforeCall` and `afterCall`.<br>
 [nedd update]
+## Note
+* Make sure correct ClassLoader.
+* TurboDex is useful to avoid some problem that caused by optimization.
+* Notice the capacity initialized of YAHFA.
+* Get a Context when BudHook initialized only to get a ClassLoader and a place to write and read Dex file,change the source as your like.
+* 
