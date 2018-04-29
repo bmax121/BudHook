@@ -72,7 +72,7 @@ public class GenedClassInfo {
 		try {
 			this.genedClass = Class.forName(fullName, true, loader);
 
-
+			//If error occured here,Make sure your ClassLoader is true!!
 			constructor = genedClass.getConstructor(Member.class,BudCallBack.class);
 
 			constructor.newInstance(hookedMethodInfo.getMember(),hookedMethodInfo.getCallBack());
