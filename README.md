@@ -31,3 +31,4 @@ There are several important classes :
 * TurboDex is useful to avoid some problem that caused by optimization.
 * Notice the capacity initialized of YAHFA.
 * Get a Context when BudHook initialized only to get a ClassLoader and a place to write and read Dex file,change the source as your like.
+* Pay attention to your ClassLoader, otherwise it may cause some reflection problems.
