@@ -1,5 +1,5 @@
 ## BudHook
-BudHook add a similar Xposed api to YAHFA<br>
+BudHook add a similar Xposed api to YAHFA.<br>
 BudHook based on several projects below:
 * [YAHFA](https://github.com/rk700/YAHFA)
 * [asmdex](http://asm.ow2.org/doc/tutorial-asmdex.html)
@@ -13,9 +13,9 @@ BudHook generates these methods dynamically. It is very `simple` to use.
 ## How it works
 When hooking a method, budhook will generate the two methods based on the information of the hooked method automatically, then generate the dex file, and finally load the dex file to complete the hook.
 ## How to run this demo
-* 1.Import the project in Android Studio `(with Instant Run disabled)`
-* 2.Build `appplugin` and then put `appplugin-debug.apk` into sdcard
-* 3.Run `app`
+* 1.Import the project in Android Studio `(with Instant Run disabled)`.
+* 2.Build `appplugin` and then put `appplugin-debug.apk` into sdcard.
+* 3.Run `app`.
 ## Support
 Budhook adds a layer written in java for YAHFA,so BudHook supports what YAHFA support.<br>
 Android `5.0 - 8.1`. <br>
@@ -30,5 +30,5 @@ There are several important classes :
 ## Note
 * TurboDex is useful to avoid some problem that caused by optimization.
 * Notice the capacity initialized of YAHFA.
-* Get a Context when BudHook initialized only to get a ClassLoader and a place to write and read Dex file,change the source as your like.
+* Get a Context when BudHook initialized only to get a ClassLoader and a place to write and read Dex file,change the source as you like.
 * Pay attention to your ClassLoader, otherwise it may cause some reflection problems.
