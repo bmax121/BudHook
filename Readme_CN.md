@@ -1,3 +1,8 @@
 # BudHook
 
-最近出差，过段时间再来看bug，写写这个readme
+## BudHook站在了巨人肩膀上，首先感谢这些巨人
+* [YAHFA](https://github.com/rk700/YAHFA)
+* [asmdex](http://asm.ow2.org/doc/tutorial-asmdex.html)
+* [TurboDex](https://github.com/asLody/TurboDex)
+
+
