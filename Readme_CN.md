@@ -6,7 +6,7 @@
 * [TurboDex](https://github.com/asLody/TurboDex)
 
 ## 有哪些优点
-* 
+* 稳定，基于YAHFA，
 * 
 * 
 
