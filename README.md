@@ -1,11 +1,12 @@
+## Change Log
+* 2018/6/6 Added early-return support(setResult).
+
 ## BudHook
 BudHook add a similar Xposed api to YAHFA.<br>
 BudHook based on several projects below:
 * [YAHFA](https://github.com/rk700/YAHFA)
 * [asmdex](http://asm.ow2.org/doc/tutorial-asmdex.html)
 * [TurboDex](https://github.com/asLody/TurboDex)
-
-### [中文[need update]](https://github.com/bmax121/BudHook/blob/master/Readme_CN.md)
 
 ## What did it solved
 When using YAHFA, every hook of a method, you have to write a method to replace it, if you want to call the original method, you must write another method to save the original method information. This is very troublesome to use.
@@ -26,9 +27,9 @@ There are several important classes :
 * `BudHelpers`: High-level API for convenient hook.Like `XposedHelper`.
 * `BudBridge`: Export two core functions for hook: `hookMethod`,`hookManyMethod`.
 * `BudCallBack`: Provide `beforeCall` and `afterCall` for subclass overrides.Like `XC_MethodHook`
-* `BudCallBack.MethodHookParams`: Wraps information about the method call and allows to influence it.Basic types will be boxed or unboxed automatically.
+* `BudCallBack.MethodHookParams`: Wraps information about the method call and allows to influence it.Basic types will be boxed or unboxed automatically.`setResult` function will prevents the call to the original method.
 ## TODO
-`Add an API(replaceCall) or early-return support(setResult).`
+
 ## Note
 * TurboDex is useful to avoid some problem that caused by optimization.
 * Notice the capacity initialized of YAHFA.
