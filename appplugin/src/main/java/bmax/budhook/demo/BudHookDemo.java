@@ -3,6 +3,7 @@ package bmax.budhook.demo;
 
 import android.util.Log;
 
+import bmax.budhook.BudBridge;
 import bmax.budhook.BudCallBack;
 import bmax.budhook.BudHelpers;
 
@@ -40,6 +41,8 @@ public class BudHookDemo {
                         params.args[1] = 5555d;
                         Log.d(TAG,Character.toString((char)(params.args[2])));
                         params.args[2] = 'd';
+
+                        params.setResult(4444L);
                     }
 
                     @Override
@@ -47,23 +50,6 @@ public class BudHookDemo {
                         Log.d(TAG,"after call test1");
                     }
                 });
-
-        BudHelpers.prepareHookMethod("com.bmax.budhook.MainActivity", originClassLoader, "test2",
-                String.class, String.class,String.class,String.class,String.class,"com.bmax.budhook.TestClass",
-                new BudCallBack() {
-                    @Override
-                    public void beforeCall(MethodHookParams params) {
-                        Log.d(TAG,"before call test2");
-                        Log.d(TAG,params.thisObject.toString());
-                        Log.d(TAG,params.args[5].toString());
-                    }
-
-                    @Override
-                    public void afterCall(MethodHookParams params) {
-                        params.result = 22222L;
-                    }
-                });
-
 
         BudHelpers.findAndHookMethod("com.bmax.budhook.MainActivity", originClassLoader, "test3",
                 Object.class,

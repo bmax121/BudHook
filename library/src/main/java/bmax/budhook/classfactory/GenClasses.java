@@ -173,7 +173,14 @@ public class GenClasses {
 				mvReplace.visitArrayOperationInsn(Opcodes.INSN_AGET_OBJECT, regIndex, 0, 3);
 			}
 		}
-
+		
+		//early return support
+		Label lb_earlyReturn = new Label();
+		mvReplace.visitMethodInsn(Opcodes.INSN_INVOKE_VIRTUAL, BudCallBack.MethodHookParams.desc, BudCallBack.MethodHookParams.isEarlyReturnMethodName, 
+				BasicType.BOOLEAN.getTypeDesc(), new int[] {1});
+		mvReplace.visitIntInsn(Opcodes.INSN_MOVE_RESULT, 3);
+		mvReplace.visitJumpInsn(Opcodes.INSN_IF_NEZ, lb_earlyReturn, 3, 0);
+		
 		
 		// call backup , if Throwable ,try-catch
 		Label lb_tryStart = null;
@@ -227,10 +234,13 @@ public class GenClasses {
 			mvReplace.visitFieldInsn(Opcodes.INSN_IPUT_OBJECT, BudCallBack.MethodHookParams.desc,
 					BudCallBack.MethodHookParams.resultFieldName, FinalStr.objectDesc, 3, 1);
 		}
+		
+		mvReplace.visitLabel(lb_earlyReturn);
 		// call after call
 		mvReplace.visitMethodInsn(Opcodes.INSN_INVOKE_VIRTUAL, BudCallBack.desc, BudCallBack.afterCallMethodName,
 				FinalStr.voidName + BudCallBack.MethodHookParams.desc, new int[] { 2, 1 });
 
+		//mvReplace.visitLabel(lb_earlyReturn);
 		// change return value and then return
 		if (hookedMethodInfo.hasReturn()) {
 			mvReplace.visitFieldInsn(Opcodes.INSN_IGET_OBJECT, BudCallBack.MethodHookParams.desc,

@@ -23,7 +23,7 @@ public abstract class BudCallBack {
     }
 
     //public void replaceCall(MethodHookParams params){
-        // not implemented
+        // setResult()
     //}
     
     public static class MethodHookParams {
@@ -35,11 +35,21 @@ public abstract class BudCallBack {
     	public static final String argsFieldName = "args";
     	public static final String resultFieldName = "result";
     	public static final String throwableFieldName = "throwable";
+        public static final String isEarlyReturnMethodName = "isEarlyReturn";
 
         public Member method = null;
         public Object thisObject = null;
         public Object[] args = null;
         public Object result = null;
         public Throwable throwable = null;
+        private boolean earlyReturn = false;
+
+        public void setResult(Object result) {
+            this.result = result;
+            this.earlyReturn = true;
+        }
+        public boolean isEarlyReturn() {
+            return this.earlyReturn;
+        }
     }
 }

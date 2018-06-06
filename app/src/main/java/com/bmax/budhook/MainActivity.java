@@ -84,11 +84,8 @@ public class MainActivity extends AppCompatActivity {
     public static void runTestFun(MainActivity thiz){
 
 
-        test1(1,2,'c');
-
-
-        long ret = thiz.test2("test2 arg1","test2 arg2","test2 arg3","test2 arg4","test2 arg5",new TestClass("constructor test"));
-        Log.d(TAG,"test2 ret" + Long.toString(ret));
+        long a = test1(1,2,'c');
+        Log.d(TAG,Long.toString(a));
 
         try {
             thiz.test3("def");
@@ -97,14 +94,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public static void test1(int  arg1,double arg2,char arg3){
-        Log.d(TAG,"arg1:" + arg1 + " arg2:" + arg2 +" arg3:" + arg3);
+    public static long test1(int  arg1,double arg2,char arg3){
+        Log.d(TAG,"origin call test1: arg1:" + arg1 + " arg2:" + arg2 +" arg3:" + arg3);
+        return 3333;
     }
 
-    public long  test2(String arg1,String arg2,String arg3,String arg4,String arg5,TestClass arg6){
-
-        return 1111;
-    }
 
     public  void test3(Object a) throws Exception{
         Log.d(TAG,"origin call test3" );
