@@ -1,5 +1,5 @@
 ## Change Log
-* 2018/6/6 Added early-return support(setResult).
+* 2018/6/6  Added early-return support(setResult).
 
 ## BudHook
 BudHook add a similar Xposed api to YAHFA.<br>
@@ -28,8 +28,6 @@ There are several important classes :
 * `BudBridge`: Export two core functions for hook: `hookMethod`,`hookManyMethod`.
 * `BudCallBack`: Provide `beforeCall` and `afterCall` for subclass overrides.Like `XC_MethodHook`
 * `BudCallBack.MethodHookParams`: Wraps information about the method call and allows to influence it.Basic types will be boxed or unboxed automatically.`setResult` function will prevents the call to the original method.
-## TODO
-
 ## Note
 * TurboDex is useful to avoid some problem that caused by optimization.
 * Notice the capacity initialized of YAHFA.
