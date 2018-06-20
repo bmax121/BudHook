@@ -1,6 +1,3 @@
-## Change Log
-* 2018/6/6  Added early-return support(setResult).
-
 ## BudHook
 BudHook add a similar Xposed api to YAHFA.<br>
 BudHook based on several projects below:
